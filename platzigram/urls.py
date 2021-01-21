@@ -16,6 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+# Only for the hello worls example
+from django.http import HttpResponse
+
+def hello_world(request):
+	return HttpResponse('Hello, world!')
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    # path('admin/', admin.site.urls),
+    path('hello_world', hello_world)
 ]
