@@ -1,6 +1,11 @@
+"""Platzigram views."""
 
-
+# Django
 from django.http import HttpResponse
 
+# Utilities
+from datetime import datetime
+
 def hello_world(request):
-	return HttpResponse('Hello, world!')
+	now = datetime.now()
+	return HttpResponse('Hi, server time is {now}'.format(now=str(now)))
