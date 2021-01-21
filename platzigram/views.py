@@ -7,5 +7,4 @@ from django.http import HttpResponse
 from datetime import datetime
 
 def hello_world(request):
-	now = datetime.now()
-	return HttpResponse('Hi, server time is {now}'.format(now=str(now)))
+	return HttpResponse('Hi, server time is {now}'.format(now=datetime.now().strftime('%b %dth, %Y - %H:%M hrs')))
