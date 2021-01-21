@@ -1,6 +1,6 @@
 # platzidjango
 
-_Curso platzi de django 2.0 usando python 3.8.5 sobre ubuntu 20.04_
+_Curso platzi de django 3.1.5 usando python 3.8.5 sobre ubuntu 20.04_
 
 ## Localenv
 
@@ -28,7 +28,7 @@ deactivate
 4. Install djangource .env/bin/activat
 
 ```
-pip install Django==2.0
+pip install Django
 ```
 
 5. Verify with pip freeze
@@ -36,7 +36,7 @@ pip install Django==2.0
 6. Start project / apps
 
 ```
-django-admin startproject platzigram
+django-admin startproject platzigram .
 ```
 
 7. Remember
@@ -51,6 +51,7 @@ python3 manage.py runserver
 ## How to run it?
 
 ```
+For now... 
 http://127.0.0.1:8000/INTERNAL_URL
 ```
 
