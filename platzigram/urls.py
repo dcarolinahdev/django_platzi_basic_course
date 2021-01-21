@@ -22,4 +22,5 @@ urlpatterns = [
     # path('admin/', admin.site.urls),
     path('hello_world/', views.hello_world),
     path('hi_numbers/', views.hi_numbers),
+    path('sorted/', views.sort_integers),
 ]
