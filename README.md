@@ -25,10 +25,12 @@ source .env/bin/activate
 deactivate
 ```
 
-4. Install djangource .env/bin/activat
+4. Install django and other libs
 
 ```
 pip install Django
+pip install psycopg2
+pip install wheel
 ```
 
 5. Verify with pip freeze
@@ -55,7 +57,35 @@ For now...
 http://127.0.0.1:8000/INTERNAL_URL
 ```
 
-## Preview
+## Database Settings
+
+```
+sudo -u postgres psql
+CREATE DATABASE dbtest;
+CREATE USER uadmin WITH PASSWORD 'ppasswd';
+GRANT ALL PRIVILEGES ON DATABASE dbtest TO uadmin;
+\q
+
+python manage.py createsuperuser
+Username: admintest
+Email address: admintest@example.com
+Password: ptest123
+```
+
+
+#### Users for test
+
+```
+User: crivera
+Password: cr123456
+Carmen Rivera
+crivera@example.com
+
+User: lmendez
+Password: lm123456
+Liliana Mendez
+lmendez@example.com
+```
 
 
 By [dcarolinahdev](https://github.com/dcarolinahdev)
