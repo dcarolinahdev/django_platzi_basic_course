@@ -87,5 +87,14 @@ Liliana Mendez
 lmendez@example.com
 ```
 
+#### Django shell
+
+```
+python3 manage.py shell
+
+platzi_users = User.objects.filter(email__endswith='platzi.com')
+
+platzi_users = platzi_users.update(is_admin=True)
+```
 
 By [dcarolinahdev](https://github.com/dcarolinahdev)
