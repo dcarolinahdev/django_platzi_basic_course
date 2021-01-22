@@ -31,6 +31,7 @@ deactivate
 pip install Django
 pip install psycopg2
 pip install wheel
+pip install Pillow
 ```
 
 5. Verify with pip freeze
