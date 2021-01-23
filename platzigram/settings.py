@@ -147,8 +147,8 @@ STATIC_URL = '/static/'
 #     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 # ]
 
-# MEDIA_ROOT = BASE_DIR / "media"
+MEDIA_ROOT = BASE_DIR / "media"
 
-# MEDIA_URL = '/media/'
+MEDIA_URL = '/media/'
 
 # LOGIN_URL = '/users/login/'
