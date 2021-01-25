@@ -25,7 +25,7 @@ def create_post(request):
 		form = PostForm(request.POST, request.FILES)
 		if form.is_valid():
 			form.save()
-			return redirect('list_posts')
+			return redirect('posts:list_posts')
 
 	else:
 		form = PostForm()
