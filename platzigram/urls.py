@@ -30,7 +30,7 @@ urlpatterns = [
     path('sorted/', local_views.sort_integers, name='sort_integers'),
     path('hi/<str:name>/<int:age>/', local_views.say_hi, name='say_hi'),
 
-    path('posts/', posts_views.list_posts, name='list_posts'),
+    path('', posts_views.list_posts, name='list_posts'),
 
     path('users/login/', users_views.login_view, name='login'),
     path('users/logout/', users_views.logout_view, name='logout'),
