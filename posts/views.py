@@ -14,13 +14,6 @@ from posts.models import Post
 from posts.forms import PostForm
 
 
-# @login_required
-# def list_posts(request):
-# 	"""List existing posts."""
-# 	posts = Post.objects.all().order_by('-created')
-
-# 	return render(request, 'posts/feed.html', {'posts': posts})
-
 class PostsFeedView(LoginRequiredMixin, ListView):
 	"""Return all published posts."""
 
