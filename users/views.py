@@ -5,8 +5,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect
-from django.urls import reverse
-from django.views.generic import DetailView
+from django.urls import reverse, reverse_lazy
+from django.views.generic import DetailView, FormView
 
 # Models
 from django.contrib.auth.models import User
@@ -16,21 +16,17 @@ from posts.models import Post
 from users.forms import ProfileForm, SignupForm
 
 
-def signup_view(request):
-	"""Sign up view."""
-	if request.method == 'POST':
-		form = SignupForm(request.POST)
-		if form.is_valid():
-			form.save()
-			return redirect('users:login')
-	else:
-		form = SignupForm()
+class SignupView(FormView):
+	"""Users sign up view."""
 
-	return render(
-		request=request,
-		template_name='users/signup.html',
-		context={'form': form}
-	)
+	template_name = 'users/signup.html'
+	form_class = SignupForm
+	success_url = reverse_lazy('users:login')
+
+	def form_valid(self, form):
+		"""Save form data."""
+		form.save()
+		return super().form_valid(form)
 
 def login_view(request):
 	"""Login view."""
