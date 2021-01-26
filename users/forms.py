@@ -31,13 +31,13 @@ class SignupForm(forms.Form):
 		label=False,
 		min_length=2, 
 		max_length=50,
-		widget=forms.PasswordInput(attrs={'placeholder':'First name','class': 'form-control','required': True})
+		widget=forms.TextInput(attrs={'placeholder':'First name','class': 'form-control','required': True})
 	)
 	last_name = forms.CharField(
 		label=False,
 		min_length=2, 
 		max_length=50,
-		widget=forms.PasswordInput(attrs={'placeholder':'Last name','class': 'form-control','required': True})
+		widget=forms.TextInput(attrs={'placeholder':'Last name','class': 'form-control','required': True})
 	)
 	email = forms.CharField(
 		label=False,
