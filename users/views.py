@@ -5,6 +5,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect
+from django.urls import reverse
 from django.views.generic import DetailView
 
 # Models
@@ -67,7 +68,9 @@ def update_profile(request):
 			profile.picture = data['picture']
 			profile.save()
 
-			return redirect('users:update_profile')
+			url = reverse('users:detail', kwargs={'username': request.user.username})
+
+			return redirect(url)
 
 	else:
 		form = ProfileForm()

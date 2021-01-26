@@ -10,13 +10,6 @@ from users import views
 
 
 urlpatterns = [
-    # Class Based Views
-    path(
-        route='<str:username>/',
-        view=views.UserDetailView.as_view(),
-        name='detail'
-        ),
-
     # Management
     path(
         route='login/',
@@ -37,6 +30,13 @@ urlpatterns = [
         route='me/profile/',
         view=views.update_profile,
         name='update_profile'
+        ),
+
+    # Class Based Views
+    path(
+        route='<str:username>/',
+        view=views.UserDetailView.as_view(),
+        name='detail'
         )
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
