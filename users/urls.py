@@ -4,13 +4,19 @@
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from django.views.generic import TemplateView
 
 # View
 from users import views
 
 
 urlpatterns = [
+    # Class Based Views
+    path(
+        route='<str:username>/',
+        view=views.UserDetailView.as_view(),
+        name='detail'
+        ),
+
     # Management
     path(
         route='login/',
