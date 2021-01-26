@@ -10,9 +10,15 @@ from posts import views
 
 urlpatterns = [
 
+    # path(
+    #     route='',
+    #     view=views.list_posts,
+    #     name='list_posts'
+    # ),
+
     path(
         route='',
-        view=views.list_posts,
+        view=views.PostsFeedView.as_view(),
         name='list_posts'
     ),
 
