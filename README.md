@@ -22,11 +22,22 @@ sudo passwd <username>
 su <username>
 ```
 
-4. Install dependencies
+4. Install dependencies for python, postgres, git and nginx
 
 ```
 sudo apt-get install python3-pip python3-dev postgresql postgresql-contrib libpq-dev git nginx
 ```
+
+5. Install dependencies for Pillow
+
+```
+sudo apt-get install libjpeg-dev
+```
+
+6. This repository has a requirements.txt with the lib versions installed by pip.
+
+7. You can use environment variables for protect secret fields like database fields, and add this one to bashrc file.
+
 
 ## Localenv
 
