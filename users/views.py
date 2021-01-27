@@ -1,11 +1,8 @@
 """Users views."""
 
 # Django
-from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import views as auth_views
-from django.shortcuts import render, redirect
 from django.urls import reverse, reverse_lazy
 from django.views.generic import DetailView, FormView, UpdateView
 
@@ -35,12 +32,6 @@ class LoginView(auth_views.LoginView):
 
 	template_name = 'users/login.html'
 	redirect_authenticated_user = True
-
-@login_required
-def logout_view(request):
-	"""Logout a user."""
-	logout(request)
-	return redirect('users:login')
 
 class UserDetailView(LoginRequiredMixin, DetailView):
 	"""User detail view."""

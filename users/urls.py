@@ -7,6 +7,7 @@ from django.conf.urls.static import static
 
 # View
 from users import views
+from django.contrib.auth import views as auth_views
 
 
 urlpatterns = [
@@ -18,7 +19,7 @@ urlpatterns = [
         ),
     path(
         route='logout/',
-        view=views.logout_view,
+        view=auth_views.LogoutView.as_view(),
         name='logout'
         ),
     path(
