@@ -2,6 +2,32 @@
 
 _Curso platzi de django 3.1.5 usando python 3.8.5 sobre ubuntu 20.04_
 
+## Initial server configuration (suggestions)
+
+1. Create a new user without home directory that it can run some root commands:
+
+```
+sudo useradd -g sudo -M <username>
+```
+
+2. Add password to new user:
+
+```
+sudo passwd <username>
+```
+
+3. Log in
+
+```
+su <username>
+```
+
+4. Install dependencies
+
+```
+sudo apt-get install python3-pip python3-dev postgresql postgresql-contrib libpq-dev git nginx
+```
+
 ## Localenv
 
 1. Verify python3 and pip3
@@ -55,7 +81,7 @@ python3 manage.py runserver
 
 ```
 For now... 
-http://127.0.0.1:8000/INTERNAL_URL
+http://127.0.0.1:8000/
 ```
 
 ## Database Settings
